@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-label="Tempat foto produk 6">
+  <rect width="400" height="260" fill="#f1dc9c"/>
+  <circle cx="330" cy="30" r="120" fill="#f8ebc4" opacity="0.55"/>
+  <circle cx="40" cy="250" r="80" fill="#f8ebc4" opacity="0.4"/>
+  <path d="M20 0 C22 12 28 18 40 20 C28 22 22 28 20 40 C18 28 12 22 0 20 C12 18 18 12 20 0Z" fill="#2b1a12" opacity="0.5" transform="translate(52 44) scale(0.8)"/>
+  <path d="M20 0 C22 12 28 18 40 20 C28 22 22 28 20 40 C18 28 12 22 0 20 C12 18 18 12 20 0Z" fill="#ffffff" opacity="0.8" transform="translate(318 178) scale(1.1)"/>
+  <ellipse cx="206" cy="124" rx="80" ry="78" fill="#2b1a12" opacity="0.14"/>
+  <circle cx="200" cy="114" r="76" fill="#fffaf3"/>
+  <circle cx="200" cy="114" r="62" fill="none" stroke="#eadfce" stroke-width="2"/>
+  <text x="200" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="72" font-weight="700" font-style="italic" fill="#2b1a12">6</text>
+  <text x="200" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#2b1a12">Ganti dengan foto produk</text>
+</svg>

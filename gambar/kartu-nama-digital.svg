@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0f2c44"/>
+            <stop offset="50%" stop-color="#133a59"/>
+            <stop offset="100%" stop-color="#071927"/>
+        </linearGradient>
+        <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ff8352"/>
+            <stop offset="100%" stop-color="#ff5e1e"/>
+        </linearGradient>
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.45"/>
+        </filter>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap');
+            text { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+        </style>
+    </defs>
+
+    <!-- Outer Card with glow & shadow -->
+    <rect x="20" y="20" width="760" height="410" rx="24" fill="url(#bgGrad)" stroke="#224c6e" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Accent Top Right Glow -->
+    <circle cx="700" cy="50" r="120" fill="#ff5e1e" opacity="0.12"/>
+    <circle cx="80" cy="380" r="100" fill="#0284c7" opacity="0.1"/>
+
+    <!-- Decorative Top Wave Pattern -->
+    <path d="M 20 180 Q 200 140 400 170 T 780 150 L 780 430 L 20 430 Z" fill="#ffffff" opacity="0.015"/>
+
+    <!-- Left Brand Section -->
+    <!-- Logo Badge -->
+    <rect x="60" y="60" width="64" height="64" rx="16" fill="url(#accentGrad)"/>
+    <text x="92" y="103" font-size="34" text-anchor="middle">🎣</text>
+
+    <!-- Brand Name & Badge -->
+    <text x="140" y="90" font-size="30" font-weight="800" fill="#ffffff" letter-spacing="0.5">SENJA</text>
+    <rect x="140" y="102" width="230" height="22" rx="6" fill="#ff5e1e" opacity="0.18"/>
+    <text x="148" y="117" font-size="11" font-weight="700" fill="#ff8352" letter-spacing="1">TOKO ALAT PANCING · MITRA UMKM</text>
+
+    <!-- Tagline -->
+    <text x="60" y="165" font-size="15" font-weight="600" fill="#e2e8f0">
+        "Peralatan Pancing Terbaik &amp; Teruji dari Sang Legend Mancing"
+    </text>
+    <text x="60" y="188" font-size="12" fill="#94a3b8">
+        Sedia Joran Tangguh, Reel Presisi, Racikan Umpan Legend &amp; Aksesoris Lengkap
+    </text>
+
+    <line x1="60" y1="210" x2="480" y2="210" stroke="#334155" stroke-dasharray="4 4" stroke-width="1.5"/>
+
+    <!-- Contact Info Details -->
+    <!-- Website -->
+    <g transform="translate(60, 230)">
+        <circle cx="16" cy="16" r="16" fill="#1b4965"/>
+        <text x="16" y="21" font-size="14" text-anchor="middle">🌐</text>
+        <text x="44" y="12" font-size="10" font-weight="600" fill="#94a3b8">WEBSITE RESMI</text>
+        <text x="44" y="26" font-size="13" font-weight="700" fill="#38bdf8">https://senja-pancing.netlify.app</text>
+    </g>
+
+    <!-- WhatsApp -->
+    <g transform="translate(60, 280)">
+        <circle cx="16" cy="16" r="16" fill="#14532d"/>
+        <text x="16" y="21" font-size="14" text-anchor="middle">💬</text>
+        <text x="44" y="12" font-size="10" font-weight="600" fill="#86efac">WHATSAPP CUSTOMER CARE</text>
+        <text x="44" y="26" font-size="13" font-weight="700" fill="#ffffff">+62 812-8899-7721</text>
+    </g>
+
+    <!-- Address & Jam -->
+    <g transform="translate(60, 330)">
+        <circle cx="16" cy="16" r="16" fill="#1b4965"/>
+        <text x="16" y="21" font-size="14" text-anchor="middle">📍</text>
+        <text x="44" y="12" font-size="10" font-weight="600" fill="#94a3b8">ALAMAT &amp; JAM BUKA</text>
+        <text x="44" y="26" font-size="12" font-weight="600" fill="#cbd5e1">Jl. Dermaga Bahari No. 7, Jakarta · 07.00 - 21.00 WIB</text>
+    </g>
+
+    <!-- Right Section: QR Code Box -->
+    <rect x="520" y="60" width="220" height="310" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+    
+    <!-- White QR Container -->
+    <rect x="555" y="85" width="150" height="150" rx="12" fill="#ffffff"/>
+    
+    <!-- QR Code SVG Pattern -->
+    <g transform="translate(565, 95) scale(4.48)">
+        <rect width="29" height="29" fill="white"/>
+        <rect x="2" y="2" width="7" height="7" fill="#0f2c44"/>
+        <rect x="3" y="3" width="5" height="5" fill="white"/>
+        <rect x="4" y="4" width="3" height="3" fill="#ff5e1e"/>
+        <rect x="20" y="2" width="7" height="7" fill="#0f2c44"/>
+        <rect x="21" y="3" width="5" height="5" fill="white"/>
+        <rect x="22" y="4" width="3" height="3" fill="#ff5e1e"/>
+        <rect x="2" y="20" width="7" height="7" fill="#0f2c44"/>
+        <rect x="3" y="21" width="5" height="5" fill="white"/>
+        <rect x="4" y="22" width="3" height="3" fill="#ff5e1e"/>
+        <rect x="11" y="2" width="2" height="6" fill="#0f2c44"/>
+        <rect x="15" y="4" width="3" height="2" fill="#0f2c44"/>
+        <rect x="11" y="11" width="7" height="7" fill="#0f2c44"/>
+        <rect x="13" y="13" width="3" height="3" fill="#ff5e1e"/>
+        <rect x="2" y="11" width="3" height="3" fill="#0f2c44"/>
+        <rect x="6" y="13" width="3" height="4" fill="#0f2c44"/>
+        <rect x="20" y="11" width="7" height="3" fill="#0f2c44"/>
+        <rect x="24" y="16" width="3" height="3" fill="#0f2c44"/>
+        <rect x="11" y="20" width="3" height="7" fill="#0f2c44"/>
+        <rect x="16" y="22" width="4" height="2" fill="#0f2c44"/>
+        <rect x="20" y="20" width="4" height="7" fill="#0f2c44"/>
+        <rect x="26" y="24" width="2" height="3" fill="#0f2c44"/>
+    </g>
+
+    <text x="630" y="260" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">SCAN QR CODE</text>
+    <text x="630" y="278" font-size="10" fill="#94a3b8" text-anchor="middle">Akses Langsung Website Toko</text>
+    <rect x="550" y="295" width="160" height="30" rx="8" fill="url(#accentGrad)"/>
+    <text x="630" y="315" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">KUNJUNGI WEBSITE</text>
+
+    <!-- Bottom Footer Watermark -->
+    <text x="60" y="405" font-size="10" fill="#475569">
+        GEMAS Digital 2026 · Karya Raflyalif Adzani Pahlevi · Program Pemberdayaan UMKM Digital
+    </text>
+</svg>

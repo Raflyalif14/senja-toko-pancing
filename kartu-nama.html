@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Nama Digital - Senja Toko Alat Pancing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
+    <style>
+        :root {
+            --primary: #0f2c44;
+            --accent: #ff5e1e;
+            --accent-light: #ff8352;
+            --ocean: #0284c7;
+            --surface: #ffffff;
+            --bg: #071927;
+            --text-dark: #0f2c44;
+            --text-light: #f8fafc;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #1b4965, #071927 70%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            color: var(--text-light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Business Card Layout */
+        .card {
+            background: linear-gradient(145deg, #133a59, #0d283e);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 32px 28px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 94, 30, 0.15);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(255, 94, 30, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .logo-box {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 16px rgba(255, 94, 30, 0.35);
+        }
+
+        .brand-title {
+            font-family: 'Fraunces', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 14px;
+            color: #f1f5f9;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .contact-item:hover {
+            transform: translateX(4px);
+            color: var(--accent-light);
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .qr-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .qr-code-img {
+            width: 72px;
+            height: 72px;
+            background: #ffffff;
+            padding: 6px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .qr-info h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .qr-info p {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-bottom: 6px;
+        }
+
+        .qr-link {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 700;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        /* Action Buttons */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #e04b10);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(255, 94, 30, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(255, 94, 30, 0.5);
+        }
+
+        .btn-secondary {
+            background: #25D366;
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(37, 211, 102, 0.45);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.08);
+            color: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Digital Business Card -->
+        <div class="card" id="kartu-digital">
+            <div class="card-header">
+                <div class="logo-box">🎣</div>
+                <div>
+                    <h1 class="brand-title">Senja</h1>
+                    <span class="brand-badge">Toko Alat Pancing · Legend Mancing</span>
+                </div>
+            </div>
+
+            <p class="tagline">
+                Peralatan pancing terlengkap & teruji di lapangan. Joran tangguh, reel presisi, dan racikan umpan jitu langsung dari sang legend!
+            </p>
+
+            <div class="contact-list">
+                <a href="https://senja-pancing.netlify.app" class="contact-item" target="_blank">
+                    <div class="contact-icon">🌐</div>
+                    <div>
+                        <div style="font-size: 11px; color: #94a3b8;">Website Resmi</div>
+                        <strong>https://senja-pancing.netlify.app</strong>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/6281288997721" class="contact-item" target="_blank">
+                    <div class="contact-icon">💬</div>
+                    <div>
+                        <div style="font-size: 11px; color: #94a3b8;">WhatsApp Customer Care</div>
+                        <strong>+62 812-8899-7721</strong>
+                    </div>
+                </a>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <div style="font-size: 11px; color: #94a3b8;">Lokasi Toko</div>
+                        <strong>Jl. Dermaga Bahari No. 7, Jakarta</strong>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div>
+                        <div style="font-size: 11px; color: #94a3b8;">Jam Operasional</div>
+                        <strong>07.00 - 21.00 WIB (Buka Setiap Hari)</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="qr-section">
+                <!-- Direct SVG QR representation -->
+                <svg class="qr-code-img" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="29" height="29" fill="white"/>
+                    <rect x="2" y="2" width="7" height="7" fill="#0f2c44"/>
+                    <rect x="3" y="3" width="5" height="5" fill="white"/>
+                    <rect x="4" y="4" width="3" height="3" fill="#ff5e1e"/>
+                    <rect x="20" y="2" width="7" height="7" fill="#0f2c44"/>
+                    <rect x="21" y="3" width="5" height="5" fill="white"/>
+                    <rect x="22" y="4" width="3" height="3" fill="#ff5e1e"/>
+                    <rect x="2" y="20" width="7" height="7" fill="#0f2c44"/>
+                    <rect x="3" y="21" width="5" height="5" fill="white"/>
+                    <rect x="4" y="22" width="3" height="3" fill="#ff5e1e"/>
+                    <rect x="11" y="2" width="2" height="6" fill="#0f2c44"/>
+                    <rect x="15" y="4" width="3" height="2" fill="#0f2c44"/>
+                    <rect x="11" y="11" width="7" height="7" fill="#0f2c44"/>
+                    <rect x="13" y="13" width="3" height="3" fill="#ff5e1e"/>
+                    <rect x="2" y="11" width="3" height="3" fill="#0f2c44"/>
+                    <rect x="6" y="13" width="3" height="4" fill="#0f2c44"/>
+                    <rect x="20" y="11" width="7" height="3" fill="#0f2c44"/>
+                    <rect x="24" y="16" width="3" height="3" fill="#0f2c44"/>
+                    <rect x="11" y="20" width="3" height="7" fill="#0f2c44"/>
+                    <rect x="16" y="22" width="4" height="2" fill="#0f2c44"/>
+                    <rect x="20" y="20" width="4" height="7" fill="#0f2c44"/>
+                    <rect x="26" y="24" width="2" height="3" fill="#0f2c44"/>
+                </svg>
+                <div class="qr-info">
+                    <h4>Scan untuk Buka Website</h4>
+                    <p>Arahkan kamera smartphone ke QR Code</p>
+                    <a href="https://senja-pancing.netlify.app" class="qr-link" target="_blank">senja-pancing.netlify.app</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+            <a href="index.html" class="btn btn-primary">
+                <span>🌐</span> Buka Website Lengkap
+            </a>
+            <a href="https://wa.me/6281288997721?text=Halo%20Senja,%20saya%20mendapatkan%20kartu%20nama%20digital%20ini%20dan%20ingin%20tanya%20produk%20pancing" class="btn btn-secondary" target="_blank">
+                <span>💬</span> Hubungi via WhatsApp
+            </a>
+            <button onclick="window.print()" class="btn btn-outline">
+                <span>🖨️</span> Cetak / Simpan PDF
+            </button>
+        </div>
+
+        <p class="footer-note">
+            GEMAS Digital 2026 · Dikembangkan oleh Raflyalif Adzani Pahlevi
+        </p>
+    </div>
+
+</body>
+</html>

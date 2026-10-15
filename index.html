@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ✏️ ==========================================================
+         TEMPLATE WEBSITE UMKM
+         Bisa dipakai untuk usaha apa saja: makanan, minuman, kerajinan,
+         pakaian, jasa, dan lain-lain.
+
+         DAFTAR TODO  (cari tulisan "TODO" dengan Ctrl + F)
+
+         Di file ini (index.html):
+           TODO 1  Nama usaha
+           TODO 2  Slogan dan kalimat pembuka
+           TODO 3  Cerita tentang usaha + foto
+           TODO 4  Daftar produk dan kategorinya
+           TODO 5  Komentar pelanggan
+           TODO 6  Alamat, jam buka, dan media sosial
+
+         Di file style.css:
+           TODO 7  Warna tema
+
+         Di file script.js:
+           TODO 8  Nomor WhatsApp dan jam buka
+
+         TANTANGAN  (kerjakan kalau semua TODO sudah selesai,
+                     cari tulisan "TANTANGAN" dengan Ctrl + F)
+
+         Di file style.css:
+           TANTANGAN CSS 1  Ubah bentuk sudut kartu        (mudah)
+           TANTANGAN CSS 2  Ubah kecepatan teks berjalan   (mudah)
+           TANTANGAN CSS 3  Ubah gerakan kartu saat disentuh (sedang)
+           TANTANGAN CSS 4  Tulis aturan CSS sendiri        (sedang)
+
+         Di file script.js:
+           TANTANGAN JS 1   Ganti kalimat pembuka WhatsApp  (mudah)
+           TANTANGAN JS 2   Salam sesuai waktu              (sedang)
+           TANTANGAN JS 3   Catatan di keranjang pesanan    (sedang)
+
+         Tips: simpan (Ctrl + S), lalu refresh browser setiap selesai 1 langkah.
+         ========================================================== -->
+
+    <!-- ✏️ TODO 1: Ganti "Nama Usaha Kamu" dengan nama usaha. Ada di 3 tempat: di sini, di navbar, dan di footer. -->
+    <title>Senja - Toko Alat Pancing</title>
+    <meta name="description"
+        content="Toko pancing Senja menyediakan alat pancing lengkap: joran, reel, umpan, dan perlengkapan dari sang legend mancing.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+        <div class="nav-isi">
+            <a href="#" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="24" height="24" aria-hidden="true">
+                    <path d="M20 0 C22 12 28 18 40 20 C28 22 22 28 20 40 C18 28 12 22 0 20 C12 18 18 12 20 0Z"
+                        fill="var(--warna-aksen)" />
+                </svg>
+                <!-- ✏️ TODO 1: Nama usaha -->
+                Senja
+            </a>
+            <button class="tombol-nav" id="tombol-nav" aria-label="Buka menu navigasi" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#cara-pesan">Cara Pesan</a></li>
+                <li><a href="#testimoni">Kata Mereka</a></li>
+                <li><a href="#kontak" class="nav-pesan">Kunjungi Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <header class="hero">
+        <div class="container hero-isi">
+            <div class="hero-teks">
+                <!-- Tulisan ini diganti otomatis oleh script.js (sedang buka / tutup) -->
+                <div class="hero-atas">
+                    <p class="status" id="status-buka">Buka setiap hari</p>
+                    <!-- Tulisan salam diatur di script.js (TANTANGAN JS 2) -->
+                    <span class="salam" id="salam">Halo, selamat datang!</span>
+                </div>
+
+                <!-- ✏️ TODO 2: Ganti slogan. Kata di dalam <em> ... </em> akan berwarna dan miring. -->
+                <h1>Peralatan pancing terbaik <em>dari sang legend mancing.</em></h1>
+                <p>Sedia joran tangguh, reel presisi, umpan racikan jitu, dan perlengkapan pancing lengkap pilihan
+                    langsung dari Senja.</p>
+
+                <div class="hero-tombol">
+                    <a href="#produk" class="tombol-utama">Lihat Produk</a>
+                    <a href="#" class="tombol-garis link-wa" target="_blank" rel="noopener">Chat WhatsApp</a>
+                    <!-- 🌟 Challenge Mudah: Tombol Suka Toko -->
+                    <button type="button" class="tombol-suka tombol-suka-toko" id="tombol-suka-toko"
+                        aria-label="Sukai Toko Senja" data-liked="false" data-count="188">
+                        <span class="ikon-hati">🤍</span>
+                        <span class="teks-suka">Sukai Toko</span>
+                        <span class="jumlah-suka">188</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-gambar" aria-hidden="true">
+                <!-- ✏️ TODO 2: Tulisan melingkar boleh diganti. Tulis kalimatnya dua kali supaya lingkarannya penuh. -->
+                <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                    <defs>
+                        <path id="lingkaran" d="M200,200 m-176,0 a176,176 0 1,1 352,0 a176,176 0 1,1 -352,0" />
+                        <clipPath id="potong-bulat">
+                            <circle cx="200" cy="200" r="150" />
+                        </clipPath>
+                    </defs>
+                    <g class="cincin-teks">
+                        <text>
+                            <textPath href="#lingkaran" textLength="1090">SENJA PANCING ✦ LEGEND MANCING ✦ SIAP STRIKE ✦
+                                SENJA PANCING ✦ LEGEND MANCING ✦ SIAP STRIKE ✦</textPath>
+                        </text>
+                    </g>
+                    <circle cx="200" cy="200" r="150" fill="#ffffff" />
+                    <g clip-path="url(#potong-bulat)">
+                        <circle cx="296" cy="112" r="96" fill="#dcecf7" />
+                        <rect x="40" y="286" width="320" height="80" fill="#b8d7eb" />
+                        <rect x="116" y="176" width="168" height="112" fill="#ffffff" stroke="#0f2c44"
+                            stroke-width="5" />
+                        <path d="M98 176 h204 l-18 -44 h-168 z" fill="#ff5e1e" stroke="#0f2c44" stroke-width="5"
+                            stroke-linejoin="round" />
+                        <path d="M150 132 l-9 44 M200 132 v44 M250 132 l9 44" stroke="#0f2c44" stroke-width="4"
+                            opacity="0.45" />
+                        <rect x="134" y="200" width="60" height="50" fill="#79b4d8" stroke="#0f2c44" stroke-width="5" />
+                        <rect x="218" y="200" width="46" height="88" fill="#1b4965" stroke="#0f2c44" stroke-width="5" />
+                        <circle cx="254" cy="248" r="4" fill="#0f2c44" />
+                    </g>
+                </svg>
+
+                <!-- 🎨 Challenge Mudah & 🚀 Challenge Menengah: 3 Elemen Dekorasi Blob dengan Kombinasi Warna Selaras -->
+                <svg class="apung apung-1 blob blob-1 dekorasi-blob" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M20 0 C22 12 28 18 40 20 C28 22 22 28 20 40 C18 28 12 22 0 20 C12 18 18 12 20 0Z"
+                        fill="#ff8352" />
+                </svg>
+                <svg class="apung apung-2 blob blob-2 dekorasi-blob" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M20 0 C22 12 28 18 40 20 C28 22 22 28 20 40 C18 28 12 22 0 20 C12 18 18 12 20 0Z"
+                        fill="#ff5e1e" />
+                </svg>
+                <svg class="apung apung-3 blob blob-3 dekorasi-blob" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M20 4 C28 3 36 10 36 19 C36 29 27 36 18 36 C9 36 4 28 4 19 C4 10 11 4 20 4 Z"
+                        fill="#0284c7" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== TEKS BERJALAN ==================== -->
+    <div class="teks-berjalan">
+        <div class="teks-berjalan-isi" id="teks-berjalan-isi">
+            <!-- ✏️ TODO 2: Ganti dengan 4-5 kelebihan usaha. Pisahkan dengan tanda ✦ -->
+            <span>Joran & Reel Kualitas Juara ✦ Racikan Umpan Legend Terbukti Strike ✦ Piranti Teruji di Lapangan ✦
+                Konsultasi Trik Mancing Gratis ✦</span>
+        </div>
+    </div>
+
+    <!-- ==================== TENTANG ==================== -->
+    <section id="tentang" class="section">
+        <div class="container tentang-isi">
+            <div class="tentang-foto animasi">
+                <!-- ✏️ TODO 3: Simpan foto usaha di folder "gambar", lalu ganti nama file di src.
+                     Ganti juga tahun berdiri di bawahnya. -->
+                <img src="gambar/foto-usaha.jpg" alt="Foto Senja sang legend mancing">
+                <div class="stiker">Sejak <strong>2015</strong></div>
+            </div>
+
+            <div class="tentang-teks animasi">
+                <span class="label">Tentang Kami</span>
+                <!-- ✏️ TODO 3: Tulis cerita usaha dari hasil wawancara dengan pemilik UMKM. -->
+                <h2 class="judul-section">Cerita Senja Sang Legend Mancing</h2>
+                <p>Didirikan oleh Senja, seorang pemancing legendaris yang telah menghabiskan belasan tahun menaklukkan
+                    berbagai spot perairan tawar dan laut lepas. Berbekal pengalaman ribuan jam memancing, Senja
+                    mendirikan toko ini untuk menyediakan perlengkapan terbaik bagi sesama penghobi mancing.</p>
+                <p>Yang membedakan Toko Senja adalah seluruh joran, reel, dan racikan umpan dipilih serta diuji langsung
+                    di lapangan. Kami tidak sekadar menjual alat, tetapi juga membagikan racikan rahasia dan teknik jitu
+                    agar setiap angler bisa merasakan sensasi strike impian.</p>
+
+                <!-- 🌟 Challenge Menantang (Modul Tahap 3): Simbol Checklist Menggunakan Karakter Unicode Melalui CSS -->
+                <div class="keunggulan-box">
+                    <ul class="checklist">
+                        <li>Joran & reel pilihan telah lolos uji ketangguhan di medan nyata</li>
+                        <li>Racikan umpan rahasia terbukti cepat disambar ikan babon</li>
+                        <li>Layanan konsultasi pemilihan piranti & teknik mancing gratis</li>
+                        <li>Jaminan produk original & bergaransi langsung dari sang legend</li>
+                    </ul>
+                </div>
+
+                <!-- ✏️ TODO 3: Ganti 3 angka dan keterangannya. Angkanya akan berhitung naik sendiri. -->
+                <div class="angka-grid">
+                    <div class="angka-kotak">
+                        <strong><span class="angka">500</span>+</strong>
+                        <span>angler puas per bulan</span>
+                    </div>
+                    <div class="angka-kotak">
+                        <strong><span class="angka">50</span>+</strong>
+                        <span>pilihan joran & reel</span>
+                    </div>
+                    <div class="angka-kotak">
+                        <strong><span class="angka">11</span></strong>
+                        <span>tahun pengalaman mancing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRODUK ==================== -->
+    <section id="produk" class="section">
+        <div class="container">
+            <div class="tengah animasi">
+                <span class="label">Produk</span>
+                <h2 class="judul-section">Pilih yang kamu suka</h2>
+                <p class="sub-judul">Pilihan joran, reel, umpan, dan aksesoris terbaik yang siap menemani aksi strike
+                    Anda.</p>
+            </div>
+
+            <!-- ✏️ TODO 4a: Ganti tulisan 3 tombol kategori sesuai jenis produk.
+                 Contoh: Makanan / Minuman / Paket, atau Tas / Dompet / Gantungan Kunci.
+                 Tulisan data-filter TIDAK perlu diubah. -->
+            <div class="filter">
+                <button class="chip aktif" data-filter="semua">Semua</button>
+                <button class="chip" data-filter="kategori1">Joran & Reel</button>
+                <button class="chip" data-filter="kategori2">Umpan Pancing</button>
+                <button class="chip" data-filter="kategori3">Aksesoris & Senar</button>
+            </div>
+
+            <!-- 🎨 Challenge Mudah: Pengatur Tema Tombol Suka -->
+            <div class="tema-suka-bar">
+                <div class="tema-suka-info">
+                    <span class="tema-label">✨ Tema Tombol Suka:</span>
+                    <span class="tema-sublabel">Ubah gaya tampilan tombol suka</span>
+                </div>
+                <div class="tema-suka-pilihan">
+                    <button type="button" class="chip-tema aktif" data-tema="sunset"
+                        title="Tema Sunset Senja (Oranye Bata & Emas)">
+                        <span class="titik-tema titik-sunset"></span> Sunset Senja
+                    </button>
+                    <button type="button" class="chip-tema" data-tema="crimson"
+                        title="Tema Crimson Love (Merah Romantis)">
+                        <span class="titik-tema titik-crimson"></span> Crimson Love
+                    </button>
+                    <button type="button" class="chip-tema" data-tema="ocean" title="Tema Ocean Wave (Biru Samudra)">
+                        <span class="titik-tema titik-ocean"></span> Ocean Wave
+                    </button>
+                </div>
+            </div>
+
+            <div class="daftar-produk animasi">
+
+                <!-- ✏️ TODO 4b: Satu blok "kartu-produk" = satu produk. Ganti 5 hal di tiap kartu:
+                     1) data-kategori : kategori1 / kategori2 / kategori3 (sesuai tombol di atas)
+                     2) data-harga    : angka saja, tanpa titik (contoh: 18000)
+                     3) src           : nama file foto di folder gambar
+                     4) nama produk (h3) dan alt foto
+                     5) deskripsi singkat (p)
+                     Mau tambah produk? Salin satu blok kartu-produk, lalu tempel di bawahnya.
+                     Tulisan kecil di pojok foto (class "pita") boleh diganti atau dihapus. -->
+                <div class="kartu-produk" data-kategori="kategori1" data-harga="285000">
+                    <div class="kartu-foto">
+                        <img src="gambar/produk-1.jpg" alt="Joran Carbon Legend Strike">
+                        <span class="pita">Favorit</span>
+                    </div>
+                    <div class="kartu-teks">
+                        <h3>Joran Carbon Legend Strike</h3>
+                        <p>Joran carbon ringan, fleksibel, dan sangat kokoh untuk menahan tarikan ikan babon.</p>
+                        <div class="kartu-bawah">
+                            <span class="harga"></span>
+                            <div class="kartu-aksi">
+                                <button type="button" class="tombol-suka" aria-label="Suka Joran Carbon Legend Strike"
+                                    data-liked="false" data-count="42">
+                                    <span class="ikon-hati">🤍</span>
+                                    <span class="teks-suka">Suka</span>
+                                    <span class="jumlah-suka">42</span>
+                                </button>
+                                <button class="tombol-tambah">+ Tambah</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kartu-produk" data-kategori="kategori1" data-harga="340000">
+                    <div class="kartu-foto">
+                        <img src="gambar/produk-2.jpg" alt="Reel Spinning Senja Pro 3000">
+                    </div>
+                    <div class="kartu-teks">
+                        <h3>Reel Spinning Senja Pro 3000</h3>
+                        <p>Putaran super halus dengan 10 ball bearings dan drag power kuat, anti-macet.</p>
+                        <div class="kartu-bawah">
+                            <span class="harga"></span>
+                            <div class="kartu-aksi">
+                                <button type="button" class="tombol-suka" aria-label="Suka Reel Spinning Senja Pro 3000"
+                                    data-liked="false" data-count="38">
+                                    <span class="ikon-hati">🤍</span>
+                                    <span class="teks-suka">Suka</span>
+                                    <span class="jumlah-suka">38</span>
+                                </button>
+                                <button class="tombol-tambah">+ Tambah</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kartu-produk" data-kategori="kategori2" data-harga="25000">
+                    <div class="kartu-foto">
+                        <img src="gambar/produk-3.jpg" alt="Umpan Racikan Khusus Senja">
+                        <span class="pita">Paling Laris</span>
+                    </div>
+                    <div class="kartu-teks">
+                        <h3>Umpan Racikan Khusus Senja</h3>
+                        <p>Formula aroma amis gurih racikan Senja, terbukti cepat disambar ikan air tawar.</p>
+                        <div class="kartu-bawah">
+                            <span class="harga"></span>
+                            <div class="kartu-aksi">
+                                <button type="button" class="tombol-suka" aria-label="Suka Umpan Racikan Khusus Senja"
+                                    data-liked="false" data-count="56">
+                                    <span class="ikon-hati">🤍</span>
+                                    <span class="teks-suka">Suka</span>
+                                    <span class="jumlah-suka">56</span>
+                                </button>
+                                <button class="tombol-tambah">+ Tambah</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kartu-produk" data-kategori="kategori2" data-harga="45000">
+                    <div class="kartu-foto">
+                        <img src="gambar/produk-4.jpg" alt="Lure Minnow Casting Predator">
+                    </div>
+                    <div class="kartu-teks">
+                        <h3>Lure Minnow Casting Predator</h3>
+                        <p>Umpan tiruan dengan aksi renang memikat, andalan casting ikan gabus dan predator liar.</p>
+                        <div class="kartu-bawah">
+                            <span class="harga"></span>
+                            <div class="kartu-aksi">
+                                <button type="button" class="tombol-suka" aria-label="Suka Lure Minnow Casting Predator"
+                                    data-liked="false" data-count="29">
+                                    <span class="ikon-hati">🤍</span>
+                                    <span class="teks-suka">Suka</span>
+                                    <span class="jumlah-suka">29</span>
+                                </button>
+                                <button class="tombol-tambah">+ Tambah</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kartu-produk" data-kategori="kategori3" data-harga="65000">
+                    <div class="kartu-foto">
+                        <img src="gambar/produk-5.jpg" alt="Senar PE Braided X8 150M">
+                    </div>
+                    <div class="kartu-teks">
+                        <h3>Senar PE Braided X8 150M</h3>
+                        <p>Anyaman 8 serat rapat dan tahan gesekan karang, membantu lemparan kail lebih jauh.</p>
+                        <div class="kartu-bawah">
+                            <span class="harga"></span>
+                            <div class="kartu-aksi">
+                                <button type="button" class="tombol-suka" aria-label="Suka Senar PE Braided X8 150M"
+                                    data-liked="false" data-count="34">
+                                    <span class="ikon-hati">🤍</span>
+                                    <span class="teks-suka">Suka</span>
+                                    <span class="jumlah-suka">34</span>
+                                </button>
+                                <button class="tombol-tambah">+ Tambah</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kartu-produk" data-kategori="kategori3" data-harga="85000">
+                    <div class="kartu-foto">
+                        <img src="gambar/produk-6.jpg" alt="Kotak Pancing Tackle Box">
+                    </div>
+                    <div class="kartu-teks">
+                        <h3>Kotak Pancing Tackle Box</h3>
+                        <p>Kotak aksesoris tahan air dengan sekat rapi untuk kail, timah, pelampung, dan swivel.</p>
+                        <div class="kartu-bawah">
+                            <span class="harga"></span>
+                            <div class="kartu-aksi">
+                                <button type="button" class="tombol-suka" aria-label="Suka Kotak Pancing Tackle Box"
+                                    data-liked="false" data-count="19">
+                                    <span class="ikon-hati">🤍</span>
+                                    <span class="teks-suka">Suka</span>
+                                    <span class="jumlah-suka">19</span>
+                                </button>
+                                <button class="tombol-tambah">+ Tambah</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="catatan-produk">Harga dapat berubah sewaktu-waktu. Pesanan dikirim sebagai pesan WhatsApp ke
+                penjual.</p>
+        </div>
+    </section>
+
+    <!-- ==================== CARA PESAN ==================== -->
+    <!-- Bagian ini sudah jadi. Boleh diubah kalau cara pesan di usaha mitra berbeda. -->
+    <section id="cara-pesan" class="section">
+        <div class="container">
+            <div class="animasi">
+                <span class="label">Cara Pesan</span>
+                <h2 class="judul-section">Empat langkah, pesanan jadi</h2>
+                <p class="sub-judul">Tidak perlu aplikasi tambahan. Cukup dari halaman ini dan WhatsApp.</p>
+            </div>
+
+            <div class="langkah-grid animasi">
+                <div class="langkah">
+                    <div class="langkah-nomor">01</div>
+                    <h3>Pilih</h3>
+                    <p>Lihat daftar produk, lalu pilih yang kamu suka. Pakai tombol kategori supaya lebih cepat.</p>
+                </div>
+                <div class="langkah">
+                    <div class="langkah-nomor">02</div>
+                    <h3>Tambah</h3>
+                    <p>Tekan tombol "+ Tambah". Jumlah dan total harga dihitung otomatis di keranjang.</p>
+                </div>
+                <div class="langkah">
+                    <div class="langkah-nomor">03</div>
+                    <h3>Kirim</h3>
+                    <p>Tekan "Pesan via WhatsApp". Daftar pesananmu langsung tertulis di chat.</p>
+                </div>
+                <div class="langkah">
+                    <div class="langkah-nomor">04</div>
+                    <h3>Terima</h3>
+                    <p>Penjual membalas untuk memastikan pesanan, pembayaran, dan cara pengambilan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONI ==================== -->
+    <section id="testimoni" class="section">
+        <div class="container">
+            <div class="tengah animasi">
+                <span class="label">Kata Mereka</span>
+                <h2 class="judul-section">Apa kata pelanggan</h2>
+            </div>
+
+            <!-- ✏️ TODO 5: Ganti dengan komentar pelanggan sungguhan (minta izin dulu ya).
+                 Ganti juga huruf di dalam class "inisial" dengan huruf pertama namanya. -->
+            <div class="testimoni-grid animasi">
+
+                <figure class="kartu-testimoni">
+                    <div class="bintang" aria-label="5 dari 5 bintang">★★★★★</div>
+                    <p>"Racikan umpan dari Om Senja mantap banget! Baru lempar 5 menit di kolam langsung dapet lele 4
+                        kg."</p>
+                    <footer>
+                        <span class="inisial">B</span>
+                        <span><strong>Budi Santoso</strong>Angler Harian</span>
+                    </footer>
+                </figure>
+
+                <figure class="kartu-testimoni">
+                    <div class="bintang" aria-label="5 dari 5 bintang">★★★★★</div>
+                    <p>"Joran carbon-nya enteng tapi kokoh luar biasa. Ditarik patin babon melengkung mulus tanpa
+                        khawatir patah."</p>
+                    <footer>
+                        <span class="inisial">A</span>
+                        <span><strong>Agus Setiawan</strong>Pemancing Liar</span>
+                    </footer>
+                </figure>
+
+                <figure class="kartu-testimoni">
+                    <div class="bintang" aria-label="5 dari 5 bintang">★★★★★</div>
+                    <p>"Reel-nya putaran halus banget dan beli alat di sini dapet tips teknik casting langsung dari Mas
+                        Senja."</p>
+                    <footer>
+                        <span class="inisial">D</span>
+                        <span><strong>Dedi Pratama</strong>Penggemar Casting</span>
+                    </footer>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KONTAK ==================== -->
+    <section id="kontak" class="section">
+        <div class="container">
+            <div class="kontak-kotak animasi">
+                <div class="kontak-kiri">
+                    <div>
+                        <span class="label">Kunjungi Kami</span>
+                        <h2>Yuk, mampir!</h2>
+                        <p>Siap menaklukkan spot pancing favoritmu? Kunjungi toko kami, konsultasi via WhatsApp, atau
+                            kirim pesan langsung melalui formulir kontak.</p>
+                    </div>
+
+                    <!-- ✏️ TODO 6: Ganti alamat, jam buka, nomor WhatsApp, dan link Instagram. -->
+                    <div class="kontak-info-list">
+                        <div class="info">
+                            <span class="info-ikon" aria-hidden="true">📍</span>
+                            <div>
+                                <strong>Alamat</strong>
+                                <span>Jl. Danau Sunter Utara No. 28, Sunter Agung, Tanjung Priok, Jakarta Utara</span>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <span class="info-ikon" aria-hidden="true">🕖</span>
+                            <div>
+                                <strong>Jam Buka</strong>
+                                <span>Setiap hari, 07.00 - 21.00 WIB</span>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <span class="info-ikon" aria-hidden="true">💬</span>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>0812-8899-7721</span>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <span class="info-ikon" aria-hidden="true">📷</span>
+                            <div>
+                                <strong>Instagram</strong>
+                                <a href="https://instagram.com/senjapancing" target="_blank" rel="noopener">@senjapancing</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kontak-tombol">
+                        <a href="#" class="tombol-utama link-wa" target="_blank" rel="noopener">Chat WhatsApp</a>
+                        <!-- ✏️ TODO 6: Buka Google Maps, cari lokasi usaha, tekan "Bagikan", salin link-nya ke href di bawah. -->
+                        <a href="https://maps.google.com/?q=Toko+Pancing+Senja" class="tombol-garis" target="_blank" rel="noopener">Buka di
+                            Google Maps</a>
+                    </div>
+                </div>
+
+                <!-- 🚀 Challenge Menengah & Challenge Menantang: Formulir Kontak Interaktif -->
+                <div class="kontak-kanan">
+                    <div class="formulir-kontak-card">
+                        <div class="form-header">
+                            <span class="form-badge">Formulir Kontak</span>
+                            <h3 class="form-judul">Kirim Pesan ke Senja</h3>
+                            <p class="form-subjudul">Tanyakan rekomendasi joran, reel, atau tips trik mancing langsung
+                                dari sang legend.</p>
+                        </div>
+
+                        <!-- Notifikasi Status Pengiriman Form -->
+                        <div id="notifikasi-form" class="form-notifikasi" hidden>
+                            <div class="notifikasi-isi">
+                                <span class="notifikasi-ikon" id="notifikasi-ikon">✅</span>
+                                <div class="notifikasi-teks">
+                                    <strong id="notifikasi-judul">Pesan Berhasil Terkirim!</strong>
+                                    <p id="notifikasi-pesan">Terima kasih atas pesan Anda. Kami akan segera menghubungi
+                                        Anda kembali.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="form-kontak" class="form-kontak" novalidate>
+                            <!-- Input Nama -->
+                            <div class="form-group">
+                                <label for="kontak-nama" class="form-label">
+                                    Nama Lengkap <span class="wajib">*</span>
+                                </label>
+                                <input type="text" id="kontak-nama" name="nama" class="form-input"
+                                    placeholder="Masukkan nama Anda..." required autocomplete="name">
+                                <div class="pesan-error" id="error-nama" role="alert"></div>
+                            </div>
+
+                            <!-- Input Email (Challenge Menantang) -->
+                            <div class="form-group">
+                                <label for="kontak-email" class="form-label">
+                                    Alamat Email <span class="wajib">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input type="email" id="kontak-email" name="email" class="form-input"
+                                        placeholder="contoh: budi@gmail.com" required autocomplete="email">
+                                    <span class="status-ikon" id="status-ikon-email" aria-hidden="true"></span>
+                                </div>
+                                <div class="pesan-error" id="error-email" role="alert"></div>
+                                <div class="petunjuk-input" id="petunjuk-email">Format harus sesuai standar alamat email
+                                    (contoh: nama@domain.com).</div>
+                            </div>
+
+                            <!-- Input Pesan (Challenge Menengah: Maks 100 Karakter) -->
+                            <div class="form-group">
+                                <div class="label-dan-counter">
+                                    <label for="kontak-pesan" class="form-label">
+                                        Pesan <span class="wajib">*</span>
+                                    </label>
+                                    <span class="counter-karakter" id="counter-karakter" aria-live="polite">
+                                        <span id="jumlah-karakter">0</span>/100 karakter
+                                    </span>
+                                </div>
+                                <textarea id="kontak-pesan" name="pesan" class="form-textarea" rows="3" maxlength="100"
+                                    placeholder="Tulis pesan atau pertanyaan Anda di sini (maksimal 100 karakter)..."
+                                    required></textarea>
+                                <div class="bar-sisa-karakter">
+                                    <span id="sisa-karakter">Sisa 100 karakter</span>
+                                    <span id="peringatan-pesan" class="peringatan-pesan" role="alert"></span>
+                                </div>
+                                <div class="pesan-error" id="error-pesan" role="alert"></div>
+                            </div>
+
+                            <!-- Tombol Kirim Form -->
+                            <button type="submit" id="tombol-kirim-form" class="tombol-kirim">
+                                <span class="kirim-teks">Kirim Pesan</span>
+                                <span class="kirim-ikon">✉️</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <!-- ✏️ TODO 1: Nama usaha. Tulis juga nama kelompokmu sebagai pembuat website. -->
+            <p>&copy; <span id="tahun">2026</span> Senja</p>
+            <p>Website dibuat oleh Raflyalif Adzani Pahlevi</p>
+        </div>
+    </footer>
+
+    <!-- ==================== KERANJANG PESANAN ==================== -->
+    <!-- Muncul otomatis setelah tombol "+ Tambah" ditekan. Tidak perlu diubah. -->
+    <div class="pesanan" id="pesanan" hidden>
+        <!-- Isi catatan ini diatur di script.js (TANTANGAN JS 3) -->
+        <p class="pesanan-catatan" id="pesanan-catatan"></p>
+        <div class="pesanan-panel" id="pesanan-panel" hidden>
+            <h3>Pesanan Kamu</h3>
+            <ul id="pesanan-daftar"></ul>
+        </div>
+        <div class="pesanan-bar">
+            <button class="pesanan-ringkas" id="pesanan-ringkas" aria-expanded="false">
+                <span id="pesanan-jumlah">0 item</span>
+                <strong id="pesanan-total">Rp 0</strong>
+            </button>
+            <a href="#" class="tombol-utama" id="pesanan-kirim" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+        </div>
+    </div>
+
+    <button class="tombol-atas" id="tombol-atas" aria-label="Kembali ke atas">↑</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

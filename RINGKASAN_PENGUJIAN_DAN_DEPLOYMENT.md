@@ -15,8 +15,8 @@
   `https://raflyalif14.github.io/senja-toko-pancing/`
 * **URL Repository GitHub:**  
   `https://github.com/Raflyalif14/senja-toko-pancing`
-* **Tautan Video Showcase (Google Drive / YouTube):**  
-  `https://drive.google.com/file/d/contoh-link-video-showcase/view?usp=sharing`
+* **Tautan Video Showcase (Google Drive):**  
+  `https://drive.google.com/drive/folders/1C2ckgMSg_9sRB5BgahN6Uvq95PBmuIEB?usp=sharing`
 
 ---
 

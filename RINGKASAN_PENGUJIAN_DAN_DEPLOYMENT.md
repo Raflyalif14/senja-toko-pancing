@@ -12,9 +12,9 @@
   `https://senja-pancing.netlify.app`  
   *(Kartu Nama Digital: `https://senja-pancing.netlify.app/kartu-nama.html`)*
 * **URL GitHub Pages (Challenge Menantang):**  
-  `https://raflyalif.github.io/senja-toko-pancing/`
+  `https://raflyalif14.github.io/senja-toko-pancing/`
 * **URL Repository GitHub:**  
-  `https://github.com/raflyalif/senja-toko-pancing`
+  `https://github.com/Raflyalif14/senja-toko-pancing`
 * **Tautan Video Showcase (Google Drive / YouTube):**  
   `https://drive.google.com/file/d/contoh-link-video-showcase/view?usp=sharing`
 
@@ -112,7 +112,7 @@ Video showcase berdurasi 2–4 menit mencakup poin-poin utama:
 - [x] URL Netlify aktif dengan custom name (`senja-pancing.netlify.app`)
 - [x] Kartu Nama Digital berbasis web (`kartu-nama.html`) & grafis (`gambar/kartu-nama-digital.svg`)
 - [x] Template pesan WhatsApp promosi siap pakai
-- [x] URL Repository & GitHub Pages aktif (`https://raflyalif.github.io/senja-toko-pancing/`)
+- [x] URL Repository & GitHub Pages aktif (`https://raflyalif14.github.io/senja-toko-pancing/`)
 - [x] Tabel perbandingan Netlify vs GitHub Pages
 - [x] Tabel pengujian fungsionalitas (QA) dan pengujian 3 pengguna mobile
 - [x] File ZIP bernama `Challenge_Tahap6_RaflyalifAdzaniPahlevi.zip` berisi seluruh source code, aset, kartu nama, dan dokumen ringkasan.
